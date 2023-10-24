@@ -47,7 +47,7 @@ int main() {
                 printf("Opção inválida\n");
         }
 
-        if (numEntrevistados >= 2 && numEntrevistados <= 300) {
+        if (numEntrevistados >= 50 && numEntrevistados <= 300) {
             printf("Digite 0 para finalizar: ");
             scanf("%d", &finalizar);
 
@@ -105,24 +105,9 @@ int main() {
         printf("Marta Vieira\n");
     }
 
-    printf("\nPessoas entrevistadas por sexo:\n");
     for (int i = 0; i < numEntrevistados; i++) {
         printf("Nome: %s, Idade: %d, Sexo: %c\n", nome[i], idade[i], sexo[i]);
-    }
-
-    printf("\nMulheres entrevistadas:\n");
-    for (int i = 0; i < numEntrevistados; i++) {
-        if (sexo[i] == 'F' || sexo[i] == 'f') {
-            printf("Nome: %s, Idade: %d\n", nome[i], idade[i]);
-        }
-    }
-
-    printf("\nHomens entrevistados:\n");
-    for (int i = 0; i < numEntrevistados; i++) {
-        if (sexo[i] == 'M' || sexo[i] == 'm') {
-            printf("Nome: %s, Idade: %d\n", nome[i], idade[i]);
-        }
-    }
+    }   
 
     printf("\nPessoas maiores de idade:\n");
     for (int i = 0; i < numEntrevistados; i++) {
@@ -131,13 +116,12 @@ int main() {
         }
     }
 
-    printf("\nPessoas menores de idade:\n");
+    printf("\nMulheres entrevistadas:\n");
     for (int i = 0; i < numEntrevistados; i++) {
-        if (idade[i] < 18) {
+        if (sexo[i] == 'F' || sexo[i] == 'f') {
             printf("Nome: %s, Idade: %d\n", nome[i], idade[i]);
         }
     }
-
 
     return 0;
 }
